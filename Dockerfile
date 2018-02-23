@@ -18,6 +18,7 @@ expect-5.45-14.el7_1 \
 curl-7.29.0-42.el7.x86_64 \
 wget-1.14-15.el7_4.1.x86_64 \
 jq-1.5-1.el7.x86_64 \ 
+openssh-clients-7.4p1-13.el7_4 \
 net-tools-2.0-0.22.20131004git.el7.x86_64 \
 traceroute-2.0.22-2.el7.x86_64 \
 iproute-3.10.0-87.el7.x86_64 \
@@ -29,7 +30,7 @@ nfs-utils-1.3.0-0.48.el7.x86_64 \
 python34-setuptools-19.2-3.el7.noarch \
 python34-pip-8.1.2-5.el7.noarch 
 
-## not used yum install -y # mc openssh-clients git nmap gcc-4.8.5-16.el7_4.1 
+## not used yum install -y # mc git nmap gcc-4.8.5-16.el7_4.1 
 
 RUN pip3 install --upgrade pip
 RUN pip3 install virtualenv
