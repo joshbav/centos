@@ -1,5 +1,6 @@
 # This is Josh's normal centos7 base container. It has a few common utilities and python 3.4.
 # Note version pinning. This is for reproducability in the future. 
+# If this dockerfile is old, then it will create a container with old utilties.
 
 # latest centos 7.4 as of 2-22-18
 FROM centos:7.4.1708
@@ -12,6 +13,7 @@ RUN yum install -y \
 vim-enhanced-7.4.160-2.el7.x86_64 \ 
 nano-2.3.1-10.el7.x86_64 \
 less-458-9.el7.x86_64 \
+make-3.82-23.el7 \ 
 expect-5.45-14.el7_1 \ 
 curl-7.29.0-42.el7.x86_64 \
 wget-1.14-15.el7_4.1.x86_64 \
@@ -27,7 +29,7 @@ nfs-utils-1.3.0-0.48.el7.x86_64 \
 python34-setuptools-19.2-3.el7.noarch \
 python34-pip-8.1.2-5.el7.noarch 
 
-## not used yum install -y # mc openssh-clients git nmap 
+## not used yum install -y # mc openssh-clients git nmap gcc-4.8.5-16.el7_4.1 
 
 RUN pip3 install --upgrade pip
 RUN pip3 install virtualenv
