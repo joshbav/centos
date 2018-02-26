@@ -28,6 +28,7 @@ bind-utils-9.9.4-51.el7_4.2  \
 unzip-6.0-16.el7.x86_64 \
 zip-3.0-11.el7.x86_64 \
 bzip2-1.0.6-13.el7.x86_64 \
+autofs-5.0.7-70.el7_4.1 \ 
 nfs-utils-1.3.0-0.48.el7.x86_64 \
 python34-setuptools-19.2-3.el7.noarch \
 python34-pip-8.1.2-5.el7.noarch 
