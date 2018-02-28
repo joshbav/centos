@@ -8,9 +8,10 @@ FROM centos:7.4.1708
 ENTRYPOINT bash
 
 ENV term=xterm
+ENV container docker
 
 RUN yum update -y
-RUN yum install -y epel-release yum-tools deltarpm ca-certificates man
+RUN yum install -y epel-release yum-tools autofs nfs-utils deltarpm ca-certificates man
 RUN yum install -y \
 vim-enhanced-7.4.160-2.el7.x86_64 \ 
 nano-2.3.1-10.el7.x86_64 \
@@ -29,7 +30,6 @@ unzip-6.0-16.el7.x86_64 \
 zip-3.0-11.el7.x86_64 \
 bzip2-1.0.6-13.el7.x86_64 \
 autofs-5.0.7-70.el7_4.1 \ 
-nfs-utils-1.3.0-0.48.el7.x86_64 \
 python34-setuptools-19.2-3.el7.noarch \
 python34-pip-8.1.2-5.el7.noarch 
 
