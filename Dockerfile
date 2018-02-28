@@ -30,13 +30,15 @@ unzip-6.0-16.el7.x86_64 \
 zip-3.0-11.el7.x86_64 \
 bzip2-1.0.6-13.el7.x86_64 \
 autofs-5.0.7-70.el7_4.1 \ 
-python34-setuptools-19.2-3.el7.noarch \
-python34-pip-8.1.2-5.el7.noarch 
 
-## not used ## yum install -y # mc git openssl nmap gcc-4.8.5-16.el7_4.1 
+## not used ## yum install -y # mc git openssl nmap gcc-4.8.5-16.el7_4.1
 
+#### PYTHON, not using version pinning at this time
+RUN yum install -y python34-setuptools \
+python34-pip
 RUN pip3 install --upgrade pip
 RUN pip3 install virtualenv
+####
 
 #### JAVA 1.9
 # per http://jdk.java.net/9/
