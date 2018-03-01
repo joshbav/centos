@@ -5,8 +5,6 @@
 # latest centos 7.4 as of 2-22-18
 FROM centos:7.4.1708
 
-ENTRYPOINT bash
-
 ENV term=xterm
 ENV container docker
 
@@ -29,7 +27,7 @@ bind-utils-9.9.4-51.el7_4.2  \
 unzip-6.0-16.el7.x86_64 \
 zip-3.0-11.el7.x86_64 \
 bzip2-1.0.6-13.el7.x86_64 \
-autofs-5.0.7-70.el7_4.1 \ 
+autofs-5.0.7-70.el7_4.1  
 
 ## not used ## yum install -y # mc git openssl nmap gcc-4.8.5-16.el7_4.1
 
