@@ -5,7 +5,7 @@
 # latest centos 7.4 as of 2-22-18
 FROM centos:7.4.1708
 
-ENV term=xterm
+ENV TERM=xterm
 ENV container docker
 
 RUN yum update -y
