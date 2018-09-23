@@ -1,4 +1,4 @@
-# This is Josh's normal centos7 base container. It has a few common utilities and python 3.4.
+# This is Josh's standard Centos7 base container.
 
 # latest centos 7.4 as of 4-22-18: FROM centos:7.4.1708
 FROM centos:7.5.1804
@@ -34,19 +34,20 @@ iproute \
 bind-utils \
 unzip \
 zip \
-bzip2 \
-autofs
+bzip2
 
 ## not used: java-1.8.0-openjdk-headless
 # need to add env vars
 
 ## not used ## yum install -y # mc git openssl nmap gcc
 
-#### PYTHON, not using version pinning at this time
-RUN yum install -y python34-setuptools \
-python34-pip
-RUN pip3 install --upgrade pip
-RUN pip3 install virtualenv
+#### PYTHON 3.6
+#RUN yum install -y python36-setuptools 
+## note pip is already included python36-pip
+#RUN easy_install-3.6 pip
+#RUN pip3 -v
+#RUN pip3 install --upgrade pip
+#RUN pip3 install virtualenv
 ####
 
 #### RUN yum clean all
