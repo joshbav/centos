@@ -36,8 +36,10 @@ unzip \
 zip \
 bzip2
 
-## not used: java-1.8.0-openjdk-headless
-# need to add env vars
+# Default to UTF-8 file.encoding
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en  
+ENV LC_ALL en_US.UTF-8 
 
 ## not used ## yum install -y # mc git openssl nmap gcc
 
@@ -49,5 +51,16 @@ bzip2
 #RUN pip3 install --upgrade pip
 #RUN pip3 install virtualenv
 ####
+
+#### JAVA 1.8
+# yum install -y java-1.8.0-openjdk-headless
+# RUN java -version
+## Verify this is the right version
+#ENV JAVA_VERSION 8u181
+## need to add env vars in app definition such as java_args 
+## note, use: java -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap
+## https://dzone.com/articles/running-a-jvm-in-a-container-without-getting-kille
+#### 
+
 
 #### RUN yum clean all
