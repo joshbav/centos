@@ -2,8 +2,8 @@
 
 FROM centos:7
 
-ENV TERM xterm
-ENV CONTAINER docker
+ENV TERM xterm-256color
+#ENV CONTAINER docker
 
 # Note nothing is version pinned, and yum update is used
 # Thus this is not an idempotent container, build it a month from now and it
