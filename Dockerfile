@@ -1,22 +1,20 @@
 # This is Josh's standard Centos7 base container.
 
-# latest centos 7.4 as of 4-22-18: FROM centos:7.4.1708
-FROM centos:7.5.1804
+FROM centos:7
 
-ENV TERM=xterm
-ENV container docker
+ENV TERM xterm
+ENV CONTAINER docker
 
 # Note nothing is version pinned, and yum update is used
 # Thus this is not an idempotent container, build it a month from now and it
 # will differ
+RUN yum install -y epel-release yum-tools deltarpm
+RUN yum makecache -y
 RUN yum update -y
-RUN yum install -y \ 
-epel-release \ 
-yum-tools \
+RUN yum install -y \
 which \
 autofs \
-nfs-utils \ 
-deltarpm \
+nfs-utils \
 ca-certificates \
 man \
 nano \
@@ -62,5 +60,6 @@ ENV LC_ALL en_US.UTF-8
 ## https://dzone.com/articles/running-a-jvm-in-a-container-without-getting-kille
 #### 
 
-
-#### RUN yum clean all
+# commented out since this is a dev container and I'll be
+# exec'ing into it and doing things
+# RUN rm -rf /var/cache/yum

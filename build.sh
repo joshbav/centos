@@ -12,7 +12,7 @@ echo
 # All files to automatically be added
 git add *
 git config user.name “joshbav”
-git commit -m "scripted commit $(date +%m-%d-%y)"
+git commit -m "Scripted commit $(date +%d-%b-%Y-%I:%M:%S%p)"
 git push -u origin master
 
 
