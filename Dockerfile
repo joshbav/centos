@@ -1,6 +1,6 @@
-# This is Josh's standard Centos7 base container.
+# This is Josh's standard Centos8 base container.
 
-FROM centos:7
+FROM centos:8
 
 ENV TERM xterm-256color
 #ENV CONTAINER docker
