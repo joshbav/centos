@@ -8,11 +8,11 @@ ENV TERM xterm-256color
 # Note nothing is version pinned, and yum update is used
 # Thus this is not an idempotent container, build it a month from now and it
 # will differ
-RUN yum update yum ca-certificates -y
-RUN yum install epel-release -y
-RUN yum makecache -y
-RUN yum update -y
-RUN yum install -y \
+RUN yum -y update yum ca-certificates
+RUN yum -y install epel-release
+RUN yum -y makecache
+RUN yum -y update
+RUN yum -y install \
 which \
 autofs \
 bash-completion \
@@ -47,7 +47,7 @@ ENV LC_ALL en_US.UTF-8
 ## not used ## yum install -y # mc git openssl nmap gcc
 
 #### PYTHON 3.6
-RUN yum install -y python36
+RUN yum -y install python36
 ## note pip is already included python36-pip
 RUN pip3 install --upgrade pip
 RUN pip3 install virtualenv
@@ -55,8 +55,8 @@ RUN pip3 install virtualenv
 
 #### JAVA
 # https://phoenixnap.com/kb/install-java-on-centos
-RUN yum install java-11-openjdk-headless -y
-# yum install -y java-1.8.0-openjdk-headless
+RUN yum -y install java-11-openjdk-headless
+# yum -y install java-1.8.0-openjdk-headless
 RUN java -version
 ## Verify this is the right version
 ENV JAVA_VERSION 11.0.5
